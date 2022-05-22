@@ -13,9 +13,6 @@ import { API } from "./services/forecastService";
 import { useEffect, useState } from "react";
 function App() {
   const [data, setData] = useState([])
-  // const [apiData, setApiData] = useState({});
-  // const [getState, setGetState] = useState('tamilnadu');
-  // const [state, setState] = useState('tamilnadu');
 const  coords = {
   lat: -22.314459,
   lon: -49.058697
@@ -30,10 +27,7 @@ useEffect(()=>{
       });
 }, [apiUrl])
 
-// const weather =  API.getCurrentWeather();
 
-// console.log(weather);
-  // const cardsArray = [18]
   const gridContent = cities.map((city)=>
   <Card name={city}>
   </Card>
