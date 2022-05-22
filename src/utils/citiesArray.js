@@ -1,0 +1,20 @@
+export const cities =[
+"Bauru",
+"Bauru",
+"Bauru",
+"Bauru",
+"Bauru",
+"Bauru",
+"Bauru",
+"Bauru",
+"Bauru",
+"Bauru",    
+"Bauru",
+"Bauru",
+"Bauru",
+"Bauru",
+"Bauru",
+"Bauru",
+"Bauru",
+"Bauru"
+]
