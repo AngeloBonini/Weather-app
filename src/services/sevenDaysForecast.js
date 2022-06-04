@@ -1,4 +1,3 @@
-import { apiKey, latLon } from "../utils/defaults";
 import Axios from "axios";
 
 // const api = Axios.create({

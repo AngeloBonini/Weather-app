@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { jsx } from '@emotion/react'
 import { css, Global } from "@emotion/react";
 
-export function Forecast(){
-
+export function Forecast({currentWeatherData}){
+    // const [weatherData, setWeatherData]
     return(<div>My forecast</div>)
 }

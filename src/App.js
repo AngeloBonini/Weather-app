@@ -6,35 +6,36 @@ import { Clock } from "./components/clock/clock";
 import { SearchBar } from "./components/search/search";
 import { Settings } from "./components/settings/settings";
 import { jsx } from "@emotion/react";
-import { css, Global } from "@emotion/react";
-import { Card } from "./components/card/card";
+
+import {  City } from "./components/city/city";
 import { cities } from "./utils/citiesArray";
-import { API } from "./services/forecastService";
-import { useEffect, useState } from "react";
+import { MainText} from "./components/mainText/mainText";
+import { Forecast } from "./components/forecast/forecast";
+
 function App() {
-  const [data, setData] = useState([])
-const  coords = {
-  lat: -22.314459,
-  lon: -49.058697
-}
-const apiUrl = `https://api.openweathermap.org/data/2.5/weather/?lat=22&lon=44&units=metric&APPID=6d542ef267595d5173c6ec1e93b039eb` 
-useEffect(()=>{
-   fetch(apiUrl)
-      .then((res) => res.json())
-      .then(result => {
-        setData(result)
-        console.log(result);
-      });
-}, [apiUrl])
 
+  let isWeatherLoaded = false;
 
-  const gridContent = cities.map((city)=>
-  <Card name={city}>
-  </Card>
+  const loadingCard = () => {
+    if(isWeatherLoaded){
+      return <Forecast></Forecast>
+    }else{
+      return <MainText></MainText>
+    }
+  }
+  const citySelected = (cityData)=>{
+    console.log(cityData)
+    isWeatherLoaded = cityData
+    setData(cityData)
+  }
+  const gridContent = cities.map((avaliableCity)=>
+  <City key={avaliableCity.toString()} name={avaliableCity} citySelected={citySelected} >
+  </City>
   )
+  
   return (
     <div className="App">
-      <div className="App-header">
+      <header className="App-header">
         <div className="clock-container">
           <Clock format12hr={true}></Clock>
         </div>
@@ -42,24 +43,13 @@ useEffect(()=>{
           <SearchBar></SearchBar>
           <Settings></Settings>
         </div>
-      </div>
-      <div className="main-content">
-        <p
-          css={css`
-            opacity: 1;
-            color: rgba(255, 255, 255, 1);
-            font-size: 44px;
-            font-weight: 500;
-            font-style: normal;
-            letter-spacing: 0px;
-          `}
-        >
-          Pick a day to see the full forecast
-        </p>
-      </div>
-      <div className="card-grid">
+      </header>
+      <main className="main-content">
+        {loadingCard()}
+      </main>
+      <footer className="card-grid">
         {gridContent}
-      </div>
+      </footer>
     </div>
   );
 }
