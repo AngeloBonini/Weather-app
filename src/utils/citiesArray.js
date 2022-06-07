@@ -1,5 +1,5 @@
 export const cities =[
-"Cuzco",
+"Cusco",
 "Tampa",
 "San Francisco",
 "London",

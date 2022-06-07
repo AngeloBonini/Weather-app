@@ -32,3 +32,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
+
+.white-text{
+  opacity: 1;
+  color: rgba(255,255,255,1);
+  font-weight: 500;
+  font-style: normal;
+}

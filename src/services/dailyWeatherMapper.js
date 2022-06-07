@@ -10,8 +10,8 @@ function createUTC(unformattedTime, timezone){
   return formatted
 }
 export default function dailyWeatherMapper(responseObject) {
-    
   const dailyWeather = {
+    name: responseObject.name,
     temperature: responseObject.main.temp,
     feelsLike: responseObject.main.feels_like,
     humidity: responseObject.main.humidity,
@@ -19,7 +19,10 @@ export default function dailyWeatherMapper(responseObject) {
     sunset: createUTC(responseObject.sys.sunset, responseObject.timezone),
     weatherPreview: responseObject.weather[0].main,
     weatherDescription: responseObject.weather[0].description,
+      lat: responseObject.coord.lat,
+      lon: responseObject.coord.lon
   };
+  console.log(dailyWeather)
   return dailyWeather;
 }
 

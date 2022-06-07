@@ -1,27 +1,22 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 
-import * as React from "react";
-import { useState, useEffect } from "react";
+import { useContext } from "react";
 import { jsx } from "@emotion/react";
-import { css, Global } from "@emotion/react";
-import { getLocationWeather} from "../../services/getLocationWeather"
-export function City({ name, citySelected }) {
+import { css } from "@emotion/react";
+import { WeatherContext } from "../../contexts/weather";
+import { UPDATE_SELECTED_CITY } from "../../contexts/weather/weatherState";
 
-  const openCityCard = true
+export function City({ name }) {
+  const [, dispatch ] = useContext(WeatherContext);
+
   function handleChange(){
-    console.log(name)
-    const weatherData = getLocationWeather(name, process.env.REACT_APP_API_KEY)
-    
-     return {weatherData, openCityCard }
+     dispatch({type: UPDATE_SELECTED_CITY, payload: name});
   }
+
   return (
     <button
-      onClick={()=>{
-        citySelected(openCityCard)
-        handleChange()
-      }
-      }
+      onClick={handleChange}
       css={css`
         border-radius: 10px;
         border: 2px solid rgba(10, 132, 255, 1);

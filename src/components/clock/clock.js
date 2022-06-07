@@ -21,7 +21,6 @@ export function Clock({format12h}) {
   return(
       <div
       css={css`
-      opacity: 1;
       color: rgba(255,255,255,1);
       font-size: 32px;
       font-weight: 500;
