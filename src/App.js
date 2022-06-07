@@ -3,20 +3,22 @@
 
 import "./App.css";
 
-import { Clock } from "./components/clock/clock";
-import { SearchBar } from "./components/search/search";
-import { Settings } from "./components/settings/settings";
+import { Clock } from "./components/Clock";
+import { SearchBar } from "./components/Search";
+import { Settings } from "./components/Settings";
 import { jsx } from "@emotion/react";
 
-import { City } from "./components/city/city";
-import { cities } from "./utils/citiesArray";
-import { MainContent } from "./components/mainContent/mainContent";
+import { LocationSelection } from "./components/LocationSelection";
+import { locations } from "./utils/LocationData";
+import { MainContent } from "./components/MainContent";
 import { WeatherProvider } from "./contexts/weather";
-import { BrowserRouter } from "react-router-dom";
 
 function App() {
-  const gridContent = cities.map((avaliableCity) => (
-    <City key={avaliableCity.toString()} name={avaliableCity}></City>
+  const gridContent = locations.map((location) => (
+    <LocationSelection
+      key={location.toString()}
+      name={location}
+    ></LocationSelection>
   ));
 
   return (

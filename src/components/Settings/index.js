@@ -1,10 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 
-import * as React from "react";
-import { useState, useEffect } from "react";
 import { jsx } from "@emotion/react";
-import { css, Global } from "@emotion/react";
+import { css } from "@emotion/react";
 
 export function Settings() {
   return (

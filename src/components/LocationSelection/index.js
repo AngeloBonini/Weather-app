@@ -5,13 +5,13 @@ import { useContext } from "react";
 import { jsx } from "@emotion/react";
 import { css } from "@emotion/react";
 import { WeatherContext } from "../../contexts/weather";
-import { UPDATE_SELECTED_CITY } from "../../contexts/weather/weatherState";
+import { UPDATE_SELECTED_LOCATION } from "../../contexts/weather/WeatherReducer";
 
-export function City({ name }) {
-  const [, dispatch ] = useContext(WeatherContext);
+export function LocationSelection({ name }) {
+  const [, dispatch] = useContext(WeatherContext);
 
-  function handleChange(){
-     dispatch({type: UPDATE_SELECTED_CITY, payload: name});
+  function handleChange() {
+    dispatch({ type: UPDATE_SELECTED_LOCATION, payload: name });
   }
 
   return (
@@ -30,20 +30,15 @@ export function City({ name }) {
         text-align: center;
         background-color: transparent;
         margin: 10px 10px;
-    
-        &:focus{
-          border: 0px ;
+
+        &:focus {
+          border: 0px;
           background-color: #ffffff;
           color: #0a84ff;
         }
       `}
-      
     >
-      <p>
-
-      {name}
-      </p>
+      <p>{name}</p>
     </button>
   );
 }
-

@@ -5,21 +5,20 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import { jsx } from "@emotion/react";
 import { css, Global } from "@emotion/react";
-import { WeekForecast } from "./week-forecast";
-import { WeatherWrapper } from "../weatherWrapper";
-import { WeekWrapper } from "../weekWrapper";
+import { DailyForecastWrapper } from "./DailyForecastWrapper";
+import { WeeklyForecastWrapper } from "./WeeklyForecastWrapper";
 
-export function Forecast(selectedCity) {
-  console.log(selectedCity);
+export function Forecast(selectedLocation) {
+  console.log(selectedLocation);
   const [isWeekly, setIsWeekly] = useState(false);
 
   return (
     <div className="card">
       <div>
         {!isWeekly ? (
-          <WeatherWrapper></WeatherWrapper>
+          <DailyForecastWrapper></DailyForecastWrapper>
         ) : (
-          <WeekWrapper></WeekWrapper>
+          <WeeklyForecastWrapper></WeeklyForecastWrapper>
         )}
       </div>
       <div className="forecast-with-buttons">

@@ -4,11 +4,11 @@ import { useContext } from "react";
 import { css } from "@emotion/react";
 import { jsx } from "@emotion/react";
 import { WeatherContext } from "../../contexts/weather";
-import { Forecast } from "../forecast";
+import { Forecast } from "./Forecast";
 export function MainContent() {
   const [state] = useContext(WeatherContext);
-  const selectedCity = state.selectedCity;
-  return state.selectedCity === "" ? (
+  const selectedLocation = state.selectedLocation;
+  return state.selectedLocation === "" ? (
     <p
       className="white-text"
       css={css`
@@ -18,6 +18,6 @@ export function MainContent() {
       Pick a day to see the full forecast
     </p>
   ) : (
-    <Forecast selectedCity></Forecast>
+    <Forecast selectedLocation></Forecast>
   );
 }

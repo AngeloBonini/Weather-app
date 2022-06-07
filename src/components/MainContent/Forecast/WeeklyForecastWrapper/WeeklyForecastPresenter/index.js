@@ -8,7 +8,7 @@ import { css, Global } from "@emotion/react";
 import { ReactSVG } from "react-svg";
 import { Link } from "react-router-dom";
 
-export function WeekForecast(SevenDaysForecast) {
+export function WeeklyForecastPresenter(SevenDaysForecast) {
   console.log(
     "🚀 ~ file: index.js ~ line 12 ~ WeekForecast ~ SevenDaysForecast",
     SevenDaysForecast

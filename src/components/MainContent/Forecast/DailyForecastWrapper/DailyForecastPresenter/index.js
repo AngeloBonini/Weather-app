@@ -8,7 +8,7 @@ import { css, Global } from "@emotion/react";
 import { ReactSVG } from "react-svg";
 import { Link } from "react-router-dom";
 
-export function OneDayForecast({
+export function DailyForecastPresenter({
   name,
   temperature,
   feelsLike,
