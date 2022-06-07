@@ -15,10 +15,7 @@ import { WeatherProvider } from "./contexts/weather";
 
 function App() {
   const gridContent = locations.map((location) => (
-    <LocationSelection
-      key={location.toString()}
-      name={location}
-    ></LocationSelection>
+    <LocationSelection key={location} name={location}></LocationSelection>
   ));
 
   return (

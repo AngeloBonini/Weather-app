@@ -1,0 +1,12 @@
+.forecast-with-buttons{
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons-check{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.days-of-forecast{
+}

@@ -18,6 +18,6 @@ export function MainContent() {
       Pick a day to see the full forecast
     </p>
   ) : (
-    <Forecast selectedLocation></Forecast>
+    <Forecast selectedLocation={selectedLocation}></Forecast>
   );
 }
