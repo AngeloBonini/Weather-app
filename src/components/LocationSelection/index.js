@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 
-import { useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 import { jsx } from "@emotion/react";
 import { css } from "@emotion/react";
 import { WeatherContext } from "../../contexts/weather";
@@ -10,7 +10,12 @@ import { UPDATE_SELECTED_LOCATION } from "../../contexts/weather/WeatherReducer"
 export function LocationSelection({ name }) {
   const [, dispatch] = useContext(WeatherContext);
 
+  const [, setIsWeekly] = useState();
+  useEffect(() => {
+    setIsWeekly(false);
+  }, [setIsWeekly]);
   function handleChange() {
+    // setIsWeekly(false);
     dispatch({ type: UPDATE_SELECTED_LOCATION, payload: name });
   }
 

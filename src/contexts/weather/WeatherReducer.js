@@ -34,8 +34,8 @@ export const weatherReducer = (state, action) => {
       };
       return {
         ...state,
-        weeklyForecastMap: state.weeklyForecast
-          ? { ...state.weeklyForecast, ...newWeeklyLocationForecast }
+        weeklyForecastMap: state.weeklyForecastMap
+          ? { ...state.weeklyForecastMap, ...newWeeklyLocationForecast }
           : newWeeklyLocationForecast,
       };
     default:
