@@ -1,14 +1,14 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
+
 import { jsx } from "@emotion/react";
 import { css } from "@emotion/react";
-// import * as React from 'react'
 
-export function SearchBar() {
+export function Settings() {
   return (
     <p
       css={css`
-        padding-right: 10px;
+        padding-left: 10px;
         opacity: 1;
         color: rgba(255, 255, 255, 1);
         font-size: 24px;
@@ -17,9 +17,8 @@ export function SearchBar() {
         letter-spacing: 0px;
         text-align: right;
       `}
-
     >
-      Search
+      Settings
     </p>
   );
 }
